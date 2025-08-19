@@ -1,10 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 
-
 const CardCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(2);
+  const [isAutoPlay, setIsAutoPlay] = useState(false);  // Auto-play state by default we stop this
 
   const cards = [
     {
@@ -89,13 +87,9 @@ const CardCarousel = () => {
 
   return (
     <div className="carousel-container">
-      <style jsx>{`
-        
-      `}</style>
-
       <div className="carousel-wrapper">
         {cards.map((card, index) => {
-          console.log('card', card)
+          // console.log('card', card)
           const position = getCardPosition(index);
           return (
             <div
